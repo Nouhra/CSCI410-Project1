@@ -56,7 +56,7 @@ class _MenuPageState extends State<MenuPage> {
         String cartEntry = _selecteItem;
         double itemPrice = _Price[_selecteItem]!;
 
-        // Add sauce price if selected
+
         if (_selecteSauce.isNotEmpty) {
           cartEntry += " with $_selecteSauce";
           itemPrice += _saucePrices[_selecteSauce.split(' - ')[0]] ?? 0.0;
@@ -71,7 +71,7 @@ class _MenuPageState extends State<MenuPage> {
 
         _cart.add(cartEntry);
 
-        // Reset selection after adding to cart
+
         _selecteItem = "";
         _selecteSauce = "";
         _totalPrice = 0.0;
@@ -152,7 +152,7 @@ class _MenuPageState extends State<MenuPage> {
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           const SizedBox(height: 10),
-          // Currency Checkboxes
+
           Row(
             children: [
               const Text(
@@ -179,8 +179,8 @@ class _MenuPageState extends State<MenuPage> {
               const Text("LL"),
             ],
           ),
-          const SizedBox(height: 10), // Added SizedBox after the last checkbox
-          // Total Price Display
+          const SizedBox(height: 10),
+
           if (_totalPrice > 0)
             Text(
               'Total Price: ${_usd ? "\$${_totalPrice.toStringAsFixed(2)}" : "LL ${( _totalPrice * _Lira).toStringAsFixed(0)}"}',
